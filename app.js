@@ -1,9 +1,9 @@
 const myButton = document.getElementById('action');
 
-let score = 0
+let score = 0;
 
 function isYesOrNo(userAnswer) {
-    const lowerCaseAnswer = userAnswer.toLowerCase()
+    const lowerCaseAnswer = userAnswer.toLowerCase();
     if (lowerCaseAnswer.startsWith('y') === true) {
         return true;
     } else if (lowerCaseAnswer.startsWith('n', 0) === true) {
@@ -44,7 +44,7 @@ myButton.onclick = () => {
         answer3Box.textContent = answer3;
         isCorrect(answer3, true, answer3Box);
 
-        alert(`Thanks ${userName}. Scroll down for results.`)
+        alert(`Thanks ${userName}. Scroll down for results.`);
 
         //Display Score
         const nameBox = document.getElementById('userName');
@@ -53,12 +53,13 @@ myButton.onclick = () => {
         const scoreBox = document.getElementById('score');
         scoreBox.textContent = score;
 
-        const percentage = ((score/3)*100).toFixed(0)
+        const percentage = ((score / 3) * 100).toFixed(0);
         const percentBox = document.getElementById('percentage');
-        percentBox.textContent = percentage
+        percentBox.textContent = percentage;
 
-        results.style.display = 'block';
+
+        //results.style.display = 'block';
         
 
     }
-}
+};
