@@ -1,21 +1,23 @@
 const myButton = document.getElementById('action');
 
+function isYesOrNo(userAnswer) {
+    const lowerCaseAnswer = userAnswer.toLowerCase()
+    if (lowerCaseAnswer.includes('y',) === true) {
+        return true;
+    } else if (lowerCaseAnswer.includes('n') === true) {
+        return false;
+    }
+}
+
 myButton.onclick = () => {
     alert('welcome to my quiz');
     const myConfirmation = confirm('do you want to take my quiz?')
 
     if (myConfirmation === true) {
 
-        const userAnswer = prompt('do i like to read? (yes/no)');
+        const userAnswer = prompt('Questions 1');
 
-        console.log(userAnswer);
+        const sanitizedUserAnswer = isYesOrNo(userAnswer)
 
-        const sanitizedUserAnswer = userAnswer.toLocaleLowerCase().trim();
-
-        if (sanitizedUserAnswer === 'yes') {
-            alert('You are correct!')
-        } else {
-            alert('do you even know me?')
-        }
     }
 }
