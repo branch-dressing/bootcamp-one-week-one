@@ -1,6 +1,6 @@
 const myButton = document.getElementById('action');
 
-var score = 0
+let score = 0
 
 function isYesOrNo(userAnswer) {
     const lowerCaseAnswer = userAnswer.toLowerCase()
@@ -11,13 +11,14 @@ function isYesOrNo(userAnswer) {
     }
 }
 
-
 function isCorrect(userAnswer, actualAnswer, answerBox) {
     if (isYesOrNo(userAnswer) === actualAnswer) {
-        score += 10;
-        answerBox.style.color = '#00b01a';
+        score += 1;
+        answerBox.style.color = '#00b512';
+        answerBox.style.border = 'solid 2px #00b512';
     } else {
         answerBox.style.color = '#d60000';
+        answerBox.style.border = 'solid 2px #d60000';
     }
 }
 
@@ -26,32 +27,37 @@ myButton.onclick = () => {
 
     if (myConfirmation === true) {
 
-        aboutme.style.display = "none"
+        const userName = prompt('What is your name?');
 
-        const answer1 = prompt('Do I like boooooooks?');
+        const answer1 = prompt(`Hey ${userName}, Do I like boooooooks?`);
         const answer1Box = document.getElementById('answer1');
         answer1Box.textContent = answer1;
         isCorrect(answer1, true, answer1Box);
 
-        const answer2 = prompt('I have read about 45 books this year.');
+        const answer2 = prompt('Have only read 48 books this year.');
         const answer2Box = document.getElementById('answer2');
         answer2Box.textContent = answer2;
         isCorrect(answer2, false, answer2Box);
 
-        const answer3 = prompt('I was a touring actor.');
+        const answer3 = prompt(`Last one, ${userName}. Was a touring actor?`);
         const answer3Box = document.getElementById('answer3');
         answer3Box.textContent = answer3;
         isCorrect(answer3, true, answer3Box);
 
+        alert(`Thanks ${userName}. Scroll down for results.`)
+
         //Display Score
+        const nameBox = document.getElementById('userName');
+        nameBox.textContent = userName;
+
         const scoreBox = document.getElementById('score');
         scoreBox.textContent = score;
 
-        results.style.display = "block"
+        const percentage = ((score/3)*100).toFixed(0)
+        const percentBox = document.getElementById('percentage');
+        percentBox.textContent = percentage
 
-        //reveal hidden section
-
-        //make something that jumps to the next section
+        results.style.display = 'block';
         
 
     }
