@@ -1,0 +1,25 @@
+.tower {
+    background: grey;
+    height:700px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end
+}
+
+.mall {
+    background: lightblue;
+    height: 300px; 
+    width: 700px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.floor {
+    background: black;
+    height: 100px;
+    width: 100px;
+    border: solid 2px white;
+}
