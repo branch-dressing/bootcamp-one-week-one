@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <div id="aboutme">
     <h1>About Me</h1>
 
     <section id="intro">
@@ -42,10 +43,11 @@
     </section>
 
     <button id="action">Ready to Take the Quiz!</button>
+    </div>
 
-    <section id="hidden">
-        <h2>Test Results</h2>
-
+    <section id="results">
+        <h1>Test Results</h1>
+        <h2>Score: <span id="score"></span></h2>
         <h3>Question 1</h3>
         <ul>
             <li>Your answer was: <span id="answer1"></span></li>
@@ -63,6 +65,7 @@
             <li>Your answer was: <span id="answer3"></span></li>
             <li>Actual Answer was: _____ </li>
         </ul>
+
     </section>
 
     <script type="module" src="app.js"></script>
